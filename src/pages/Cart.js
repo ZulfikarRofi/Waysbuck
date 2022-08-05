@@ -15,7 +15,7 @@ export default function Cart() {
                         <h4 className='text-start text-danger fw-bold mb-3'>My Cart</h4>
                         <p className='text-start text-danger fw-normal fs-5'>Review Your Order</p>
                         <div style={{borderTop:"2px solid red", borderBottom:"2px solid red", width:"80%"}}>
-                            <div className="p-3 d-flex align-items-center" >
+                            {/* <div className="p-3 d-flex align-items-center" >
                                 <img
                                 src={iceblend}
                                 style={{width:"15%", borderRadius:"8px"}}
@@ -38,8 +38,8 @@ export default function Cart() {
                                         />
                                     </div>
                                 </div>
-                            </div>
-                            <div className="p-3 d-flex align-items-center" >
+                            </div> */}
+                            {/* <div className="p-3 d-flex align-items-center" >
                                 <img
                                 src={iceblend}
                                 style={{width:"15%", borderRadius:"8px"}}
@@ -62,7 +62,7 @@ export default function Cart() {
                                         />
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </Col>

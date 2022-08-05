@@ -9,6 +9,7 @@ import AddTopping from "./pages/AddTopping";
 import IncomeTransaction from "./pages/IncomeTransaction";
 import Profile from "./pages/Profile";
 import Cart from './pages/Cart';
+import './assets/styles.css';
 
 function App() {
   return (

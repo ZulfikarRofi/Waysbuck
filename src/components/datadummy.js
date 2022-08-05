@@ -72,7 +72,7 @@ export let dataIncome = [
         address:"jl.Sumatera",
         postcode:"11128",
         income: 100000,
-        status:"On the way"
+        status:"ontheway"
     },
     {
         id:"4",
@@ -80,7 +80,7 @@ export let dataIncome = [
         address:"jl.Sulawesi",
         postcode:"25478",
         income: 50000,
-        status:"Waiting Approve"
+        status:"waiting"
     },
     {
         id:"5",

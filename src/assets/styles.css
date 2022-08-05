@@ -1,0 +1,17 @@
+.success {
+    color: rgb(50,255,55)
+}
+.canceled {
+    color: rgb(255,25,10)
+}
+.ontheway {
+    color: #00D1FF
+}
+.waiting {
+    color: #FF9900
+}
+.triggered :hover {
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: darkblue;
+}
