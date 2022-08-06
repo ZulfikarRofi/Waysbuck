@@ -12,6 +12,11 @@
 }
 .triggered :hover {
     cursor: pointer;
-    background-color: whitesmoke;
+    background-color: lightslategray;
     color: darkblue;
+}
+.description {
+    list-style-type:none;
+    text-align: left;
+    margin-left: 0px;
 }

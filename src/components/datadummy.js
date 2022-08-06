@@ -3,7 +3,7 @@ import bubble from '../assets/bubble-tea-gelatin.svg';
 import greencoco from '../assets/green-coconut.svg';
 import bobamango from '../assets/boba-mango.svg';
 import berry from '../assets/berry.svg';
-import kiwi from '../assets/kiwi-popping.svg';
+import kiwi from '../assets/kiwi.png';
 import strawberry from '../assets/strawberry-popping.svg';
 import matchacan from '../assets/matcha-can.svg';
 
