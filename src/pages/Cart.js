@@ -1,9 +1,11 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import NavbarUser from '../components/navbar';
 import iceblend from '../assets/ice-blend.png';
 import trash from '../assets/trash2.svg';
 import PaymentModal from '../components/paymentmodal';
+import { UserContext } from '../context/userContext';
+import NavbarLogin from '../components/navbarUser';
 
 export default function Cart() {
     const [payShow, setPayShow] = useState(false);
@@ -11,10 +13,13 @@ export default function Cart() {
     const handleClose =()=> setPayShow(false);
     console.log(setPayShow)
 
+    const [state, dispatch] = useContext(UserContext)
+    const [addCart, setAddChart] = useState(0)
+
   return (
     <div>
-        <NavbarUser />
-        <Container>
+        <NavbarLogin  show={addCart}/>
+        <Container className='mt-5'>
             <Row className="">
                 <Col xs={12} md={7} className="mt-5 py-5 px-4" style={{}}>
                     <div style={{backgroundColor:"white", borderTop:"2px solid red", borderBottom:"2px solid red"}}>
@@ -86,7 +91,7 @@ export default function Cart() {
                         <p className='text-danger fw-bold'> Rp. 69.000,-</p>
                    </div>
                    <div className="mt-5" style={{width:"80%"}}>
-                    <Button onClick={handlePay} className="btn btn-danger fw-bold px-5" style={{width:"100%"}}>
+                    <Button onClick={() => handlePay()} className="btn btn-danger fw-bold px-5" style={{width:"100%"}}>
                         Pay
                     </Button>
                     <PaymentModal payShow={payShow} Close={handleClose} />

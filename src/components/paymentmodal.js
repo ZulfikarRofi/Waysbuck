@@ -1,12 +1,13 @@
 import React from 'react'
-import {Modal, Col, Row, ModalBody} from 'react-bootstrap'
-import iceblend from '../assets/ice-blend.png'
-import logo from '../assets/logo.svg'
-import barcode from '../assets/barcode.png'
+import {Modal} from 'react-bootstrap'
+// import iceblend from '../assets/ice-blend.png'
+// import logo from '../assets/logo.svg'
+// import barcode from '../assets/barcode.png'
 
-export default function PaymentModal(payShow, Close, props) {
+export default function PaymentModal(props) {
+  console.log(props);
   return (
-    <Modal show={payShow} onHide={Close} 
+    <Modal show={props.payShow} onHide={props.Close} 
     {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"

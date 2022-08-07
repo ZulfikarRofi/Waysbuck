@@ -4,15 +4,10 @@ import iceblend from '../assets/ice-blend.png'
 import logo from '../assets/logo.svg'
 import barcode from '../assets/barcode.png'
 
-export default function TransModal(handleShow, Close, props) {
-    console.log(Close);
+export default function TransModal(props) {
+    console.log(props);
     return (
-    <Modal show={handleShow} onHide={Close}>
-        {/* <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title-vcenter">
-                Modal heading
-            </Modal.Title>
-        </Modal.Header> */}
+    <Modal show={props.handleShow} onHide={props.Close}>
         <Modal.Body style={{backgroundColor:"#F6DADA", width:"100%", borderRadius:"6px"}}>
             <Row>
             <Col xs={12}>

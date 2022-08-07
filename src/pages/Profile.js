@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import NavbarUser from '../components/navbar'
 import profile from '../assets/photo-profile.png'
 import logo from "../assets/logo.svg";
 import barcode from '../assets/barcode.png'
 import iceblend from '../assets/ice-blend.png'
+import { UserContext } from '../context/userContext';
+import NavbarLogin from '../components/navbarUser';
 
 
 export default function Profile() {
+    const [state, dispatch] = useContext(UserContext)
+    const [addCart, setAddChart] = useState(0)
   return (
     <div>
-        <NavbarUser/>
-        <Container>
+       <NavbarLogin show={addCart}/>
+        <Container className='mt-5 pt-5'>
             <Row>
                 <Col xs={12} md={6} className="ps-5 p-2">
                     <Row>

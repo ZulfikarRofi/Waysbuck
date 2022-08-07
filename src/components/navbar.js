@@ -1,23 +1,22 @@
-import React from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import React, { useContext, useState } from "react";
+import { Container, Modal, Nav, Navbar, Form, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+// import { Button } from "react-bootstrap/lib/inputgroup";
+// import { Form } from "react-bootstrap/lib/navbar";
 import logo from "../assets/logo.svg";
+import { UserContext } from "../context/userContext";
+import AuthModal from "./AuthModal";
 
 export default function NavbarUser() {
-  return (
+
+  return ( 
     <div>
       <Container>
-        <Navbar sticky="top d-flex bg-white justify-content-between">
-          <Navbar.Brand className="ms-3">
+        <Navbar fixed="top d-flex bg-white justify-content-between">
+          <Navbar.Brand className="ms-3 ps-5">
             <img src={logo} style={{ maxWidth: "70px" }} alt="logobrand" />
           </Navbar.Brand>
-          <Nav>
-            <Nav.Link className="me-5 fw-bolder text-danger" href="#home">
-              Login
-            </Nav.Link>
-            <Nav.Link className="me-5 fw-bolder text-danger" href="#logout">
-              Signup
-            </Nav.Link>
-          </Nav>
+          <AuthModal/>
         </Navbar>
       </Container>
     </div>

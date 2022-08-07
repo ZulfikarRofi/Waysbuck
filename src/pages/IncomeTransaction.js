@@ -1,20 +1,21 @@
 import React, {useState} from 'react'
-import { Container, Table, Col, Row } from 'react-bootstrap'
+import { Container, Table} from 'react-bootstrap'
 // import Modal from 'react-bootstrap/Modal'
 import { dataIncome } from '../components/datadummy'
-import NavbarUser from '../components/navbar'
+// import NavbarUser from '../components/navbar'
 import '../assets/styles.css';
 import TransModal from '../components/transmodal';
+import NavbarAdmin from '../components/navbarAdmin';
 
 export default function IncomeTransaction() {
-    const [modalShow, setModalShow] = useState(false);
-    const handleShow = () => setModalShow(true);
-    const handleClose = () => setModalShow(false);
-    // console.log(modalShow);
+    const [transShow, setTransShow] = useState(false);
+    const handleTrans = () => setTransShow(true);
+    const handleClose = () => setTransShow(false);
+    console.log(setTransShow);
   return (
     <div>
         <Container>
-        <NavbarUser />
+        <NavbarAdmin />
             <div>
                 <h1 className='text-start text-danger fw-semibold mb-5 mt-2'>Income Transaction</h1>
             </div>
@@ -31,10 +32,10 @@ export default function IncomeTransaction() {
                 </thead>
                 <tbody className='triggered' style={{border:"1px solid grey"}}>
                         <TransModal
-                        modalShow={modalShow} close={handleClose}
+                        transShow={transShow} Close={handleClose}
                         />
                     {dataIncome.map((item, index) => (
-                        <tr onClick={handleShow} key={index}>
+                        <tr key={index}>
                             <td>
                                 {index + 1}
                             </td>

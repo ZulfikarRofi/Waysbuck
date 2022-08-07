@@ -1,22 +1,29 @@
 import React from 'react'
-import { Col, Container, Row, Form, Button, FormControl } from 'react-bootstrap'
+import { Col, Container, Row, Form, Button } from 'react-bootstrap'
 import NavbarUser from '../components/navbar'
 import berry from '../assets/berry.svg'
+import '../assets/styles.css';
 import paperclip from '../assets/paperclip.png'
+import NavbarAdmin from '../components/navbarAdmin';
 
 export default function AddTopping() {
   return (
     <div>
-        <Container>
-            <NavbarUser />
+        <Container className='mt-5 pt-5'>
+            <NavbarAdmin />
             <Row>
                 <Col xs={12} md={7}>
                 <Form>
-                    <Form.Label className='text-start text-danger fw-semibold fs-1'>Product</Form.Label>
+                    <div className='add-title text-danger mb-5'>
+                        <h1 className='fw-bold'>Toping</h1>
+                    </div>
                     <Form.Group>
-                    <Form.Control type='text' placeholder='name product' className='mb-4'/>
-                    <Form.Control type='text' placeholder='price'className='mb-4'/>
-                    <Form.Control type='file' className='form-control mb-4'/>
+                    <Form.Control type='text' placeholder='Name product' className='form-box mb-4'/>
+                    <Form.Control type='text' placeholder='Price'className='form-box mb-4'/>
+                    <div className='input-group  mb-4' style={{borderRadius:"5px"}}>
+                        <input type="file" className='form-control' id='inputgroupfile2' hidden required/>
+                        <label className='d-flex jc-between ai-center input-group-text form-box' htmlFor='inputgroupfile2' style={{width:"100%", borderRadius:"5px"}}><p>Photo Product</p> <img src={paperclip} alt="" className='' /></label>
+                    </div>
                     </Form.Group>
                     <Button className="btn btn-danger" style={{width:"70%"}}>
                     Add Product

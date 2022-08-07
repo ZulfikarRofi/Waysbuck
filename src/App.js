@@ -17,11 +17,11 @@ function App() {
         <Router>
           <Routes>
             <Route exact path="/" element={<Landing/>}/>
-            <Route exact path="/detail-product" element={<Detail />}/>
-            <Route exact path="/income-transaction" element={<IncomeTransaction />}/>
+            <Route exact path="/product/:id" element={<Detail />}/>
+            <Route exact path="/admin" element={<IncomeTransaction />}/>
             <Route exact path="/add-product" element={<AddProduct />}/>
             <Route exact path="/profile" element={<Profile/>} />
-            <Route exact path="/add-topping" element={<AddTopping />}/>
+            <Route exact path="/add-toping" element={<AddTopping />}/>
             <Route exact path="/cart" element={<Cart />}/>
           </Routes>
         </Router>
