@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
-import NavbarUser from '../components/navbar';
+// import NavbarUser from '../components/navbar';
 import iceblend from '../assets/ice-blend.png';
 import trash from '../assets/trash2.svg';
 import PaymentModal from '../components/paymentmodal';

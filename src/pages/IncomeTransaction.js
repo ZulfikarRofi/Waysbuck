@@ -6,6 +6,7 @@ import { dataIncome } from '../components/datadummy'
 import '../assets/styles.css';
 import TransModal from '../components/transmodal';
 import NavbarAdmin from '../components/navbarAdmin';
+import convertRupiah from "rupiah-format";
 
 export default function IncomeTransaction() {
     const [transShow, setTransShow] = useState(false);
@@ -14,8 +15,8 @@ export default function IncomeTransaction() {
     console.log(setTransShow);
   return (
     <div>
-        <Container>
         <NavbarAdmin />
+        <Container className='mt-5 pt-5'>
             <div>
                 <h1 className='text-start text-danger fw-semibold mb-5 mt-2'>Income Transaction</h1>
             </div>
@@ -35,7 +36,7 @@ export default function IncomeTransaction() {
                         transShow={transShow} Close={handleClose}
                         />
                     {dataIncome.map((item, index) => (
-                        <tr key={index}>
+                        <tr onClick={()=> handleTrans ()} key={index}>
                             <td>
                                 {index + 1}
                             </td>
@@ -49,7 +50,7 @@ export default function IncomeTransaction() {
                                 {item.postcode}
                             </td>
                             <td style={{border:"1px solid grey"}}>
-                                Rp.{item.income}
+                                {convertRupiah.convert(item.income)}
                             </td>
                             <td className={item.status} style={{border:"1px solid grey"}}>
                                 {item.status === "success" ? "Success" : item.status === "ontheway" ? "On The Way" : item.status === "waiting" ? "Waiting Approve" : item.status === "canceled" ? "Canceled": ""}

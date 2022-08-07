@@ -6,12 +6,13 @@ import { dataProduct } from '../components/datadummy';
 import NavbarUser from '../components/navbar';
 import NavbarLogin from '../components/navbarUser';
 import { UserContext } from '../context/userContext';
+import convertRupiah from "rupiah-format";
+
 
 function Landing () {
   const [state, dispatch] = useContext(UserContext)
   const [addCart, setAddChart] = useState(0)
   console.log(state.user);
-  console.log("test".state);
 
     return (
         <div>
@@ -24,9 +25,9 @@ function Landing () {
             </Card>
             </Container>
     <Container>
-            <h2 className="text-start text-danger my-4">
+            <h1 className="text-start text-danger my-4">
              <b>Let's Order</b>
-                </h2>
+                </h1>
         <Row className="gap-1">
             {dataProduct.map((item, index) => (
             <Col className="mb-3 " key={index}>
@@ -34,15 +35,15 @@ function Landing () {
                 <Card
                   key={index}
                   className="rounded-3 bgCard text-decoration-none"
-                  style={{ width: "14rem" }}
+                  style={{ width: "18rem" }}
                 >
                   <Card.Img variant="top" src={item.image} />
                   <Card.Body className="">
                     <Card.Title className="text-danger text-decoration-none">
-                      {item.name}
+                      <b>{item.name}</b>
                     </Card.Title>
                     <Card.Text className="text-danger text-decoration-none">
-                      Rp {item.price}
+                     {convertRupiah.convert(item.price)}
                     </Card.Text>
                   </Card.Body>
                 </Card>

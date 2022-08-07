@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   Container,
   Dropdown,
@@ -12,8 +12,9 @@ import logo from "../assets/logo.svg";
 import profile from "../assets/photo-profile.png";
 import cart from "../assets/cart.svg";
 import profile1 from "../assets/icon-profile.svg";
-import logout from "../assets/logout.svg";
-import { Link } from "react-router-dom";
+import logoutImg from "../assets/logout.svg";
+import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../context/userContext";
 
 export default function NavbarLogin({show}) {
   const profilToggle = (
@@ -22,7 +23,19 @@ export default function NavbarLogin({show}) {
 
   const profileVector = <Image src={profile1} width="15" height="15" />;
 
-  const logoutIcon = <Image src={logout} width="15" height="15" />;
+  const logoutIcon = <Image src={logoutImg} width="15" height="15" />;
+
+  const [state, dispatch] = useContext(UserContext);
+
+  let navigate = useNavigate();
+
+  const logout = () => {
+    dispatch({
+      type: "LOGOUT",
+    });
+    navigate("/");
+  };
+
   return (
     <div>
       <Container>
@@ -52,7 +65,7 @@ export default function NavbarLogin({show}) {
                 <Dropdown.Divider />
                 <Dropdown.Item className="text-danger">
                   {logoutIcon}
-                  <span> Logout</span>
+                  <span  onClick={logout}> Logout</span>
                 </Dropdown.Item>
               </NavDropdown>
             </Nav.Link>

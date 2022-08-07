@@ -7,7 +7,10 @@ import barcode from '../assets/barcode.png'
 export default function TransModal(props) {
     console.log(props);
     return (
-    <Modal show={props.handleShow} onHide={props.Close}>
+    <Modal show={props.transShow} onHide={props.Close} {...props}
+    size="lg"
+    aria-labelledby="contained-modal-title-vcenter"
+    centered>
         <Modal.Body style={{backgroundColor:"#F6DADA", width:"100%", borderRadius:"6px"}}>
             <Row>
             <Col xs={12}>
@@ -75,9 +78,6 @@ export default function TransModal(props) {
                 </Col>
             </Row>
         </Modal.Body>
-        {/* <Modal.Footer>
-            <Button onClick={props.onHide}>Close</Button>
-        </Modal.Footer> */}
         </Modal>
   )
 }

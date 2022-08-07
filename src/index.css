@@ -20,3 +20,7 @@ code {
   content: url(/src/assets/check.png);
   display: absolute;
 }
+.bgCard {
+  background-color: rgb(235, 199, 197) !important;
+  border-radius: 12px !important;
+}

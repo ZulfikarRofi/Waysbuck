@@ -6,7 +6,7 @@ import NavbarLogin from '../components/navbarUser';
 import { useParams } from 'react-router-dom';
 import {dataProduct} from '../components/datadummy'
 import { UserContext } from '../context/userContext';
-import NavbarUser from '../components/navbar';
+import convertRupiah from "rupiah-format";
 
 function Detail (){
     const [checkedState, setCheckedState] =useState(
@@ -61,13 +61,13 @@ function Detail (){
                     </Col>
                     <Col xs={12} md={7} style={{backgroundColor:"white"}}>
                         <div>
-                            <h1 className='text-start text-danger fw-bold'>{resp.name}</h1>
+                            <h1 className='text-start text-danger fw-bold mb-3'>{resp.name}</h1>
                         </div>
-                        <div className='mb-5'>
-                            <p className='text-start text-danger' style={{fontSize:"22px"}}>Rp. {resp.price}</p>
+                        <div className='mb-3'>
+                            <p className='text-start text-danger' style={{fontSize:"22px"}}>{convertRupiah.convert(resp.price)}</p>
                         </div>
                         <div className='mb-5 mt-3'>
-                            <h3 className='text-start fw-bold mb-5 mt-5' style={{color:"#974A4A"}}>Topping</h3>
+                            <h3 className='text-start fw-bold mb-3' style={{color:"#974A4A"}}>Topping</h3>
                             <Row>
                                 {dataTopping.map((item, index) => (
                                 <Col xs={4} md={3}>
@@ -80,18 +80,19 @@ function Detail (){
                                     <label htmlFor={`custom-checkbox-${index}`}>
                                     <img 
                                     src={item.image}
-                                    style={{height:"5rem",borderRadius:"10px"}}
+                                    className='mt-5'
+                                    style={{height:"5rem",borderRadius:"10px",position:"static"}}
                                     alt=''
                                     />
                                     </label>
-                                    <p className='text-align-center text-danger fw-semibold mb-5'>{item.name}</p>
+                                    <p className='text-align-center text-danger fw-semibold '>{item.name}</p>
                                 </Col>
                                 ))}
                             </Row>
                         </div>
                         <div className='d-flex justify-content-between'>
                             <h2 className='text-danger fw-bold fs-4 mt-3 mb-5'>Total</h2>
-                            <h2 className='text-danger fw-bold fs-4 mt-3 mb-5'>Rp. {resp.price + total}</h2>
+                            <h2 className='text-danger fw-bold fs-4 mt-3 mb-5'>{convertRupiah.convert(resp.price + total)} </h2>
                         </div>
                     <div className=''>
                         <Button className="btn btn-auth-red fw-bold mb-4" style={{width:"100%"}} onClick={()=>setAddChart(addCart +1)}>Add to Cart</Button>
