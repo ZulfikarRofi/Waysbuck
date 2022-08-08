@@ -1,12 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Col, Container, Form, Row, Button} from 'react-bootstrap';
 import iceblend from '../assets/ice-blend.png';
 import NavbarUser from '../components/navbar';
 import paperclip from '../assets/paperclip.png';
 import NavbarAdmin from '../components/navbarAdmin';
+import ProductAdd from '../components/productAdd';
 
 
 function AddProduct() {
+  const [addProduct, setAddProduct] = useState(false);
+    const handleAp =() => setAddProduct(true);
+    const handleCloseAp =() => setAddProduct(false);
+    console.log(setAddProduct);
   return (
     <div>
       <NavbarAdmin />
@@ -25,9 +30,10 @@ function AddProduct() {
                   <label className='d-flex jc-between ai-center input-group-text form-box' htmlFor='inputgroupfile2' style={{width:"100%", borderRadius:"5px"}}><p>Photo Product</p> <img src={paperclip} alt="" className='' /></label>
                 </div>
               </Form.Group>
-              <Button className="btn btn-danger" style={{width:"70%"}}>
+              <Button className="btn btn-danger" style={{width:"70%"}} onClick={()=> handleAp()}>
                 Add Product
               </Button>
+              <ProductAdd addProduct={addProduct} Close={handleCloseAp}/>
             </Form>
           </Col>
           <Col xs={12} md={5} className="mt-5">

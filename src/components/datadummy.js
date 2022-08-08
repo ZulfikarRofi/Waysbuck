@@ -142,4 +142,22 @@ export let userData = [{
         password: '1234',
         status: 'customer',
     },
+];
+export let dataTransaction = [
+    {
+        id: 1,
+        name: "Boba Milk Tea",
+        price: 27000,
+        image: brand1,
+        topping: 'mango boba, bill berry boba',
+        qty: 1
+    },
+    {
+        id: 2,
+        name: "Ice Coffe Palm Sugar",
+        price: 27000,
+        image: brand1,
+        topping: 'mango boba, bill berry boba',
+        qty: 1
+    }
 ]

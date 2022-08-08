@@ -33,7 +33,7 @@ export default function IncomeTransaction() {
                 </thead>
                 <tbody className='triggered' style={{border:"1px solid grey"}}>
                         <TransModal
-                        transShow={transShow} Close={handleClose}
+                        transShow={transShow} Close={handleClose} 
                         />
                     {dataIncome.map((item, index) => (
                         <tr onClick={()=> handleTrans ()} key={index}>

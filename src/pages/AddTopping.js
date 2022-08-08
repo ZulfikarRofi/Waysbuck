@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Col, Container, Row, Form, Button } from 'react-bootstrap'
 import NavbarUser from '../components/navbar'
 import berry from '../assets/berry.svg'
 import '../assets/styles.css';
 import paperclip from '../assets/paperclip.png'
 import NavbarAdmin from '../components/navbarAdmin';
+import ToppingAdd from '../components/toppingAdd';
 
 export default function AddTopping() {
+    const [addTopping, setAddTopping] = useState(false);
+    const handleAdd =() => setAddTopping(true);
+    const handleCloseAdd =() => setAddTopping(false);
+    console.log(setAddTopping);
+
   return (
     <div>
         <Container className='mt-5 pt-5'>
@@ -25,9 +31,10 @@ export default function AddTopping() {
                         <label className='d-flex jc-between ai-center input-group-text form-box' htmlFor='inputgroupfile2' style={{width:"100%", borderRadius:"5px"}}><p>Photo Product</p> <img src={paperclip} alt="" className='' /></label>
                     </div>
                     </Form.Group>
-                    <Button className="btn btn-danger" style={{width:"70%"}}>
-                    Add Product
+                    <Button className="btn btn-auth-red" style={{width:"70%"}} onClick={()=> handleAdd()}>
+                    Add Topping
                     </Button>
+                    <ToppingAdd addTopping={addTopping} Close={handleCloseAdd}/>
                 </Form>
                 </Col>
                 <Col xs={12} md={5}>

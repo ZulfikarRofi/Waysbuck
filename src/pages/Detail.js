@@ -46,6 +46,7 @@ function Detail (){
         console.log(totalPrice);
         setTotal(totalPrice)
     }
+    
     return(
         <div>
             <NavbarLogin show={addCart}/>
