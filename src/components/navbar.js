@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
-import { Container, Modal, Nav, Navbar, Form, Button } from "react-bootstrap";
+import { Container, Navbar} from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 // import { Button } from "react-bootstrap/lib/inputgroup";
 // import { Form } from "react-bootstrap/lib/navbar";
 import logo from "../assets/logo.svg";
 import { UserContext } from "../context/userContext";
-import AuthModal from "./AuthModal";
+import AuthModal from "./modal/AuthModal";
 
 export default function NavbarUser() {
 

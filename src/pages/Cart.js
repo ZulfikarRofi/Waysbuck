@@ -2,9 +2,9 @@ import React, {useContext, useState} from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 // import NavbarUser from '../components/navbar';
 // import iceblend from '../assets/ice-blend.png';
-import DeleteModal from '../components/deleteModal';
+import DeleteModal from '../components/modal/deleteModal';
 import trash from '../assets/trash2.svg';
-import PaymentModal from '../components/paymentmodal';
+import PaymentModal from '../components/modal/paymentmodal';
 import { UserContext } from '../context/userContext';
 import NavbarLogin from '../components/navbarUser';
 import {dataTransaction} from '../components/datadummy';

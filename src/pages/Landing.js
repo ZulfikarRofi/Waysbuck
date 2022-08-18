@@ -31,7 +31,7 @@ function Landing () {
         <Row className="gap-1">
             {dataProduct.map((item, index) => (
             <Col className="mb-3 " key={index}>
-                <Link to={`/product/${index}`} className="text-decoration-none">
+                <Link to={state.isLogin === true ?`/product/${index}`:""} className="text-decoration-none">
                 <Card
                   key={index}
                   className="rounded-3 bgCard text-decoration-none"

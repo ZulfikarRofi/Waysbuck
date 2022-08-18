@@ -4,7 +4,7 @@ import { Container, Table} from 'react-bootstrap'
 import { dataIncome } from '../components/datadummy'
 // import NavbarUser from '../components/navbar'
 import '../assets/styles.css';
-import TransModal from '../components/transmodal';
+import TransModal from '../components/modal/transModal';
 import NavbarAdmin from '../components/navbarAdmin';
 import convertRupiah from "rupiah-format";
 

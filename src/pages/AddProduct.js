@@ -4,7 +4,7 @@ import iceblend from '../assets/ice-blend.png';
 import NavbarUser from '../components/navbar';
 import paperclip from '../assets/paperclip.png';
 import NavbarAdmin from '../components/navbarAdmin';
-import ProductAdd from '../components/productAdd';
+import ProductAdd from '../components/modal/productAdd';
 
 
 function AddProduct() {

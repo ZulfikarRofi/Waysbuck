@@ -10,6 +10,11 @@ import IncomeTransaction from "./pages/IncomeTransaction";
 import Profile from "./pages/Profile";
 import Cart from './pages/Cart';
 import './assets/styles.css';
+import { useContext } from "react";
+
+// const [state] = (useContext);
+// let isLogin = state.isLogin
+// let isAdmin = 
 
 function App() {
   return (

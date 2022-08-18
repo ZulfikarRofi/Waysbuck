@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Nav, Button, Modal, Form } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../context/userContext';
+import { UserContext } from '../../context/userContext';
 
 export default function AuthModal() {
     

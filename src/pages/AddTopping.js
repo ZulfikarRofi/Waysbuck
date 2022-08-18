@@ -5,7 +5,7 @@ import berry from '../assets/berry.svg'
 import '../assets/styles.css';
 import paperclip from '../assets/paperclip.png'
 import NavbarAdmin from '../components/navbarAdmin';
-import ToppingAdd from '../components/toppingAdd';
+import ToppingAdd from '../components/modal/toppingAdd';
 
 export default function AddTopping() {
     const [addTopping, setAddTopping] = useState(false);
